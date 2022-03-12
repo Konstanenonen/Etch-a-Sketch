@@ -17,11 +17,12 @@ body {
 }
 
 .square {
-  border: solid 1px rgb(73, 70, 70);
+  border: solid 1px rgb(105, 104, 104);
+  background-color: rgb(250, 246, 246);
 }
 
 .filled {
-  background-color: black;
+  background-color: rgb(65, 64, 64);
 }
 
 .play-area {
@@ -46,6 +47,36 @@ body {
   cursor: pointer;
 }
 
+.controls {
+  width: 500px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.input-area {
+  display: flex;
+}
+
+.square-button {
+  background-color: rgb(61, 131, 88);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+.square-button:hover {
+  background-color: rgb(29, 73, 46);
+  cursor: pointer;
+}
+
+#squares-input {
+  height: 100%;
+}
+
+
+
 @media screen and (max-width: 700px) {
   .container {
     width: 250px;
@@ -53,5 +84,19 @@ body {
     border: solid 2px black;
     display: flex;
     flex-wrap: wrap;
+  }
+
+  .controls {
+    width: 400px;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .input-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
   }
 }
