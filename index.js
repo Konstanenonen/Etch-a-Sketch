@@ -1,36 +1,35 @@
-for (let i = 0; i < 256; i++) {
-  const square = document.createElement("div");
-  square.setAttribute("class", "square");
-  square.style = "width: 6.25%; height: 6.25%;";
-  document.querySelector(".container").appendChild(square);
+createGrid(16);
+addListenerToClearButton();
+
+function createGrid(squaresPerSide) {
+  if (squaresPerSide > 100) squaresPerSide = 100;
+  document.querySelector(".container").innerHTML = "";
+  addSquares(squaresPerSide);
+  addListenersToSquares();
 }
 
-const squares =  document.querySelectorAll(".square");
-squares.forEach(square => square.addEventListener("mouseover", () => {
-  square.setAttribute("class", "square filled");
-}));
-
-const button = document.querySelector(".clear");
-button.addEventListener("click", () => {
-  let numberOfNewSquares = Number(prompt("How many squares for each side this time?"));
-
-  if (numberOfNewSquares > 100) numberOfNewSquares = 100;
-
-  const scale = 100 / numberOfNewSquares;
-  const squareWidth = `${scale}%`;
-
-  document.querySelector(".container").innerHTML = "";
-
-  for (let i = 0; i < numberOfNewSquares * numberOfNewSquares; i++) {
+function addSquares(squaresPerSide) {
+  for (let i = 0; i < squaresPerSide * squaresPerSide; i++) {
     const square = document.createElement("div");
     square.setAttribute("class", "square");
+    const squareWidth= `${100 / squaresPerSide}%`;
     square.style.width = squareWidth;
     square.style.height = squareWidth;
     document.querySelector(".container").appendChild(square);
   }
+}
 
+function addListenersToSquares() {
   const squares =  document.querySelectorAll(".square");
     squares.forEach(square => square.addEventListener("mouseover", () => {
     square.setAttribute("class", "square filled");
   }));
-});
+}
+
+function addListenerToClearButton() {
+  const button = document.querySelector(".clear");
+    button.addEventListener("click", () => {
+    let squaresPerSide = Number(prompt("How many squares for each side this time?"));
+    createGrid(squaresPerSide);
+  });
+}
