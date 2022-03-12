@@ -12,9 +12,9 @@ function addSquares(squaresPerSide) {
   for (let i = 0; i < squaresPerSide * squaresPerSide; i++) {
     const square = document.createElement("div");
     square.setAttribute("class", "square");
-    const squareWidth= `${100 / squaresPerSide}%`;
-    square.style.width = squareWidth;
-    square.style.height = squareWidth;
+    const squareSideLength= `${100 / squaresPerSide}%`;
+    square.style.width = squareSideLength;
+    square.style.height = squareSideLength;
     document.querySelector(".container").appendChild(square);
   }
 }
