@@ -1,0 +1,47 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  padding: 50px;
+}
+
+.container {
+  width: 500px;
+  height: 500px;
+  border: solid 2px black;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.square {
+  border: solid 1px rgb(73, 70, 70);
+}
+
+.filled {
+  background-color: black;
+}
+
+.play-area {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.clear {
+  background-color: rgb(136, 62, 62);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+.clear:hover {
+  background-color: rgb(85, 42, 42);
+  cursor: pointer;
+}
